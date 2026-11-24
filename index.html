@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汇红砂锅 · 新店冷启动全案运营方案</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;
+       background:#F6F2EA;color:#221B14;line-height:1.78;font-size:15px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:520px;margin:0 auto;background:#F6F2EA;min-height:100vh;}
+
+  .hero{background:linear-gradient(160deg,#0E1310 0%,#1F3326 55%,#3F5B3A 100%);
+        padding:36px 24px 30px;color:#fff;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-60px;bottom:-80px;width:240px;height:240px;
+        border-radius:50%;background:radial-gradient(circle,rgba(180,255,160,.22),transparent 70%);}
+  .hero .tag{display:inline-block;font-size:11px;letter-spacing:1px;color:#BDE8A8;
+        border:1px solid rgba(189,232,168,.4);padding:3px 10px;border-radius:20px;margin-bottom:14px;}
+  .hero h1{font-size:24px;font-weight:800;letter-spacing:.5px;line-height:1.45;}
+  .hero h1 em{font-style:normal;color:#D9F5C6;}
+  .hero p{font-size:13px;color:#A9C4A0;margin-top:11px;line-height:1.72;}
+  .hero .kpi{display:flex;gap:9px;margin-top:18px;position:relative;z-index:2;}
+  .hero .kpi div{flex:1;background:rgba(255,255,255,.07);border-radius:10px;padding:9px 4px;text-align:center;border:1px solid rgba(255,255,255,.08);}
+  .hero .kpi b{display:block;font-size:17px;color:#D9F5C6;font-weight:800;}
+  .hero .kpi span{font-size:10px;color:#93AC8B;}
+
+  .sec{padding:26px 20px 4px;}
+  .sec h2{font-size:17px;font-weight:800;letter-spacing:.4px;margin-bottom:14px;
+        display:flex;align-items:center;gap:8px;}
+  .sec h2 i{font-style:normal;font-size:15px;}
+  .card{background:#fff;border-radius:14px;padding:18px 16px;margin-bottom:14px;
+        box-shadow:0 1px 3px rgba(34,27,20,.06);border:1px solid rgba(34,27,20,.05);}
+  .card h3{font-size:14.5px;font-weight:800;margin-bottom:9px;color:#1C1510;}
+  .card p{font-size:13.8px;color:#4A4038;margin-bottom:9px;}
+  .card p:last-child{margin-bottom:0;}
+  .lead{background:linear-gradient(135deg,#1F3326,#3F5B3A);color:#fff;border:none;}
+  .lead h3{color:#D9F5C6;font-size:15px;}
+  .lead p{color:#DCEBD5;font-size:14.2px;line-height:1.85;}
+  .lead strong{color:#F0FFE4;}
+
+  table{width:100%;border-collapse:collapse;font-size:12.8px;margin:4px 0 6px;}
+  th{background:#F3F7F0;color:#5E6B58;font-weight:700;text-align:left;padding:8px 7px;
+     border-bottom:1px solid #DFE8D9;font-size:12px;}
+  td{padding:8px 7px;border-bottom:1px solid #F0F4EC;color:#3D342C;vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  .hot{color:#C2410C;font-weight:800;}
+  .ok{color:#3F6B2E;font-weight:700;}
+  .self{background:#F7FBF4;}
+
+  .num{display:inline-flex;width:20px;height:20px;border-radius:6px;background:#3F6B3A;color:#fff;
+       font-size:11.5px;font-weight:800;align-items:center;justify-content:center;margin-right:7px;flex-shrink:0;}
+  .li{display:flex;gap:0;font-size:13.8px;color:#4A4038;margin-bottom:10px;line-height:1.75;}
+  .li:last-child{margin-bottom:0;}
+  .li b{color:#1C1510;}
+
+  .warn{background:#FDF6E4;border-left:3px solid #D0A034;border-radius:0 10px 10px 0;
+        padding:13px 15px;font-size:13.4px;color:#7A5A16;margin-bottom:14px;line-height:1.78;}
+  .warn b{color:#8E6208;}
+  .danger{background:#FBEEE9;border-left:3px solid #B8503F;border-radius:0 10px 10px 0;
+        padding:13px 15px;font-size:13.4px;color:#7F2A20;margin-bottom:14px;line-height:1.78;}
+  .danger b{color:#8E1F0E;}
+
+  .kpis{display:flex;gap:8px;margin-bottom:14px;}
+  .kpis div{flex:1;background:#fff;border-radius:12px;padding:13px 8px;text-align:center;
+            border:1px solid rgba(34,27,20,.06);box-shadow:0 1px 2px rgba(34,27,20,.04);}
+  .kpis b{display:block;font-size:16px;font-weight:800;color:#3F6B3A;margin-bottom:2px;}
+  .kpis span{font-size:10.5px;color:#8A7C6E;line-height:1.4;display:block;}
+
+  .mapbox{background:#fff;border-radius:14px;padding:8px 6px 2px;margin-bottom:14px;
+          border:1px solid rgba(34,27,20,.05);box-shadow:0 1px 3px rgba(34,27,20,.06);}
+  .mapbox svg{width:100%;height:auto;display:block;}
+  .mapnote{font-size:12px;color:#8A7C6E;padding:0 12px 12px;line-height:1.6;}
+
+  .tl{position:relative;padding-left:22px;}
+  .tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:#DFE8D9;}
+  .tl-item{position:relative;margin-bottom:14px;font-size:13.6px;color:#4A4038;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{content:"";position:absolute;left:-21px;top:6px;width:10px;height:10px;
+                   border-radius:50%;background:#3F6B3A;border:2px solid #F6F2EA;}
+  .tl-item b{color:#1C1510;display:block;margin-bottom:2px;}
+
+  .foot{padding:26px 20px 40px;text-align:center;}
+  .foot p{font-size:12px;color:#9A8E82;line-height:1.9;}
+  .foot b{color:#4A4038;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">天津 · 滨海新区生态城 · 美逸园片区</span>
+    <h1>汇红砂锅<br><em>新店冷启动全案</em></h1>
+    <p>砂锅火锅 · 开业期｜POI 建店 4 天<br>点评侧星级 0 · 评价 0 · 距头部竞对 324 米</p>
+    <div class="kpi">
+      <div><b>4天</b><span>建店天数</span></div>
+      <div><b>0</b><span>点评评价</span></div>
+      <div><b>324m</b><span>最近强竞对</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>🎯</i>一、一页纸结论</h2>
+    <div class="card lead">
+      <h3>你是新店，这既是劣势，也是这家店最大的牌。</h3>
+      <p>生态城商圈砂锅类在营 <strong>15 家</strong>，评分中位数只有 <strong>3.7 分</strong>——绝大多数是砂锅菜、砂锅米线、麻辣烫，人均 19—32 元。<strong>整个品类没有一家把"砂锅"做正餐的。</strong></p>
+      <p>唯一的高分是 <strong>324 米外的丽伟的串（4.6 分 / 3330 条评价 / 人均 76）</strong>，但它是"烧烤+砂锅"的夜宵复合业态，不是纯粹的砂锅火锅。</p>
+      <p><strong>所以你的机会很明确：在生态城，把"砂锅火锅"做成正餐品类，你是第一家有这个条件的新店。</strong>但新店只有一次开局窗口——开业前 30 天。这 30 天里把评价基数、套餐结构、品类表达做对，后面就是自然增长；做错了，就是又一家"3.7 分的砂锅店"。<strong>方案的全部内容，就是这 30 天怎么打。</strong></p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>📍</i>二、位置：一个"砂锅类整体做不精"的商圈</h2>
+    <div class="mapbox">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="250" cy="250" r="167" fill="none" stroke="#DFE8D9" stroke-width="1" stroke-dasharray="4 4"/>
+        <circle cx="250" cy="250" r="84" fill="none" stroke="#DFE8D9" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="250" y="18" font-size="11" fill="#B9C4B2" text-anchor="middle">北</text>
+        <text x="250" y="492" font-size="11" fill="#B9C4B2" text-anchor="middle">南</text>
+        <text x="4" y="252" font-size="11" fill="#B9C4B2">西</text>
+        <text x="496" y="252" font-size="11" fill="#B9C4B2" text-anchor="end">东</text>
+        <text x="420" y="86" font-size="10" fill="#C8D3C2">1km</text>
+        <text x="336" y="172" font-size="10" fill="#C8D3C2">500m</text>
+
+        <circle cx="250" cy="250" r="10" fill="#3F6B3A"/>
+        <circle cx="250" cy="250" r="18" fill="none" stroke="#3F6B3A" stroke-width="1.4" opacity="0.35"/>
+        <text x="250" y="286" font-size="12.5" font-weight="700" fill="#2E5128" text-anchor="middle">汇红砂锅（新店）</text>
+
+        <circle cx="304" cy="250" r="8" fill="#C2410C"/>
+        <text x="312" y="240" font-size="10.5" font-weight="700" fill="#9A2F06">丽伟的串 4.6</text>
+        <text x="312" y="252" font-size="10" fill="#9A2F06">3330评·76元·324m</text>
+
+        <circle cx="304" cy="258" r="5" fill="#6B5F54" opacity="0"/>
+        <text x="312" y="266" font-size="10" fill="#3D342C">蟹海记火锅 4.2·327m</text>
+
+        <circle cx="250" cy="235" r="5" fill="#8A7C6E"/>
+        <text x="256" y="228" font-size="10" fill="#5A4F44">晋来顺砂锅 3.7·92m</text>
+
+        <circle cx="250" cy="149" r="6" fill="#6B5F54"/>
+        <text x="250" y="140" font-size="10.5" fill="#3D342C" text-anchor="middle">鸡公煲砂锅 3.6·607m</text>
+
+        <circle cx="332" cy="332" r="6" fill="#6B5F54"/>
+        <text x="340" y="328" font-size="10.5" fill="#3D342C">潮正和 4.4·697m</text>
+
+        <circle cx="356" cy="356" r="6" fill="#8A7C6E"/>
+        <text x="364" y="352" font-size="10.5" fill="#5A4F44">鼎大厨砂锅菜·899m</text>
+      </svg>
+      <div class="mapnote">按 POI 经纬度实算方位与直线距离，1 公里内主要竞对 · 数据来源：海鸥 CRM</div>
+    </div>
+
+    <div class="card">
+      <h3>商圈底子</h3>
+      <p>生态城商圈内砂锅类关键词命中门店 <b>28 家</b>，其中<b>在营 15 家</b>、尚未开业 5 家、已倒闭 8 家。<b>倒闭数接近在营数的一半</b>——这个品类在生态城的淘汰率很高，说明本地顾客对砂锅是"试一次就走"的状态。</p>
+      <p>再看火锅大盘：海底捞（4.8/2061条/人均98）、潮正和潮汕牛肉（4.4/1240条/83）、熊喵来了（4.6/356条/71）——<b>火锅品类的高分玩家都在，说明生态城人不缺火锅消费力，缺的是"值得专门去一次的砂锅"。</b></p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>📊</i>三、竞对拆解：谁在抢你的客，谁不是</h2>
+    <div class="card">
+      <table>
+        <tr><th>门店</th><th>距离</th><th>星级</th><th>评价</th><th>人均</th></tr>
+        <tr class="self"><td><b>汇红砂锅（本店）</b></td><td>—</td><td class="hot">0</td><td class="hot">0</td><td>未标</td></tr>
+        <tr><td>丽伟的串·烧烤·砂锅</td><td class="hot">324m</td><td>4.6</td><td>3330</td><td>76</td></tr>
+        <tr><td>蟹海记·海鲜火锅</td><td>327m</td><td>4.2</td><td>22</td><td>78</td></tr>
+        <tr><td>鸡公煲砂锅·过桥米线</td><td>607m</td><td>3.6</td><td>18</td><td>20</td></tr>
+        <tr><td>潮正和潮汕牛肉火锅</td><td>697m</td><td>4.4</td><td>1240</td><td>83</td></tr>
+        <tr><td>鼎大厨砂锅菜</td><td>899m</td><td>3.4</td><td>7</td><td>20</td></tr>
+        <tr><td>晋来顺·砂锅·炒菜</td><td>92m</td><td>3.7</td><td>84</td><td>19</td></tr>
+        <tr><td>戈爷砂锅宴（滨海店）</td><td>1669m</td><td>3.9</td><td>156</td><td>57</td></tr>
+        <tr><td>双婆婆老成都砂锅菜</td><td>3883m</td><td>3.8</td><td>654</td><td>32</td></tr>
+      </table>
+    </div>
+
+    <div class="warn">
+      <b>看清一件事：324 米外的丽伟，是你唯一的"真对手"。</b>4.6 分、3330 条评价、人均 76——它用"烧烤+砂锅"拿下了这个片区的夜宵与酒局。<b>你打不过它的评价数（3330 条），但你可以不跟它抢同一个场景。</b>它是"晚上撸串配砂锅"，你做"一家人/一桌朋友，围一口砂锅吃正餐"。场景错开，就不是零和。
+    </div>
+
+    <div class="card">
+      <h3>把竞对分三层，各自策略不同</h3>
+      <div class="li"><span class="num">1</span><div><b>第一层·唯一头部：丽伟的串（324m / 4.6 / 3330）。</b>不正面比评价数。它的优势是"烧烤+夜宵+酒"，你的机会在"白天和正餐时段"——它下午两点到五点基本没生意，那正是砂锅火锅的好时段。</div></div>
+      <div class="li"><span class="num">2</span><div><b>第二层·同品类低价盘：晋来顺（92m/3.7/19元）、鼎大厨（899m/3.4/20元）、鸡公煲（607m/3.6/20元）。</b>人均 19—20 元，本质是快餐。<b>它们决定了"砂锅＝便宜快餐"这个认知</b>——你要做的第一件事不是抢客，是把这个认知掰开。</div></div>
+      <div class="li"><span class="num">3</span><div><b>第三层·火锅大盘：潮正和（697m/4.4/1240/83）、蟹海记（327m/4.2/22/78）。</b>人均 78—83，跟你可能重叠。蟹海记评价只有 22 条但 4.2 分，说明它是新店且跑得不错——<b>它离你只有 327 米，是新店打法的现成参照物</b>。</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>🩺</i>四、新店诊断：三件还没做的事</h2>
+    <div class="kpis">
+      <div><b>0<small style="font-size:10px;">条</small></b><span>点评评价</span></div>
+      <div><b>0</b><span>点评星级</span></div>
+      <div><b>未标</b><span>点评人均</span></div>
+    </div>
+
+    <div class="card">
+      <div class="li"><span class="num">1</span><div><b>点评侧是一片空白。</b>顾客搜索"生态城 砂锅"，看到你：没有星级、没有评价、没人均、没有菜品图。<b>这个状态在点评上等于"不存在"</b>——不是分数低的问题，是连被比较的资格都还没有。</div></div>
+      <div class="li"><span class="num">2</span><div><b>品类表达没解决。</b>"汇红砂锅"这个名字好在两个字上——<b>"砂锅"是品类词，天然能搜到</b>。但本地顾客看到"砂锅"想到的是 20 元的砂锅菜，不是一锅能涮能喝汤的正餐。名字对了，副标题和首图没跟上，等于白给。</div></div>
+      <div class="li"><span class="num">3</span><div><b>经营数据是零。</b>系统里桌数、面积、翻台、菜品毛利全部为空。<b>新店最贵的不是钱，是前三个月的试错成本</b>——没有数据，你连"哪道菜该留、哪个时段该加人"都判断不了。</div></div>
+    </div>
+
+    <div class="danger">
+      <b>一条必须说清的话：</b>新店的前 30 天，平台会给一段新店流量扶持，这是<b>一次性、不可重来</b>的资源。很多店在这 30 天里忙着试菜、改菜单、招人，等一切顺了，扶持期已经过去了。<b>所以这份方案的时间轴是从"现在"算，不是从"准备好"算。</b>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>🍲</i>五、定位：把"砂锅"从快餐词，变成正餐词</h2>
+    <div class="card lead">
+      <h3>你不需要重新起名，你需要给"砂锅"加一个后缀。</h3>
+      <p>商圈里 15 家在营砂锅，人均 19—32 元的有 8 家，人均 57—76 元的只有 3 家。<strong>中间 35—55 元这一段几乎是空的。</strong></p>
+      <p>而"砂锅火锅"这个说法，在生态城<b style="color:#F0FFE4">没有被任何人占住</b>。这是最省力也最值钱的位置。</p>
+    </div>
+
+    <div class="card">
+      <h3>建议的对外表达</h3>
+      <p style="background:#F7FBF4;border-radius:8px;padding:11px 13px;font-size:13.6px;color:#2E5128;">
+        「汇红砂锅 · 砂锅火锅」<br>
+        <span style="font-size:12.4px;color:#7A8B74;">副标题：一人一锅 / 围锅而食 · 砂锅慢炖 · 可涮可喝汤<br>
+        搜索词挂：砂锅火锅、砂锅菜、生态城火锅、砂锅炖菜</span>
+      </p>
+      <p><b>为什么必须带"火锅"两个字：</b>只叫"砂锅"，在点评里跟 8 家 20 元的快餐店排在一起比价；带上"火锅"，进入的是人均 60—90 的正餐池子，跟潮正和、蟹海记同场竞技——<b>你的产品本来就属于那个池子。</b></p>
+      <p><b>同时保留"砂锅"这个词：</b>它是你唯一能免费拿到的搜索入口，生态城每天搜"砂锅"的人，都是你的准客。</p>
+    </div>
+
+    <div class="card">
+      <h3>定价带怎么站</h3>
+      <table>
+        <tr><th>档位</th><th>商圈现状</th><th>你的位置</th></tr>
+        <tr><td>19—32 元</td><td>8 家在营（砂锅菜/米线/麻辣烫）</td><td class="hot">不要进。进去就是比谁更便宜</td></tr>
+        <tr class="self"><td><b>45—65 元</b></td><td><b>基本空白</b></td><td class="ok"><b>建议落点。双人套餐 108—128，人均 54—64</b></td></tr>
+        <tr><td>70—85 元</td><td>丽伟 76、蟹海记 78、潮正和 83</td><td>作为宴请/大锅款的上沿，不做主力</td></tr>
+      </table>
+      <p style="margin-top:8px;">理由：45—65 这一段既有"正经吃饭"的价值感，又不会撞上丽伟和潮正和。等评价做到 4.5、月销稳定，再往上抬。</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>🚀</i>六、开局 30 天：四周作战表</h2>
+
+    <div class="card">
+      <h3>第 1 周 · 把"能买"的东西建起来（最重要的一周）</h3>
+      <div class="li"><span class="num">1</span><div><b>三档团购上线：</b>双人砂锅火锅 118（引流主推）｜三—四人砂锅套餐 198（主力）｜六人聚餐锅 368（宴请）。<b>第一周就要有三个价格锚点，让顾客一眼看出"这家不是 20 块砂锅菜"。</b></div></div>
+      <div class="li"><span class="num">2</span><div><b>首图与菜品图：</b>砂锅冒热气的主图 + 6—8 张菜品图。新店没图，等于没开门。</div></div>
+      <div class="li"><span class="num">3</span><div><b>门店信息补全：</b>人均标价、营业时间、停车信息、包间/桌型、招牌菜三连（在页面上做"必点"标签）。</div></div>
+      <div class="li"><span class="num">4</span><div><b>副标题改"砂锅火锅"</b>，四个搜索词全部挂上。</div></div>
+    </div>
+
+    <div class="card">
+      <h3>第 2 周 · 把第一批评价攒出来</h3>
+      <div class="li"><span class="num">1</span><div><b>开局期是评价最容易拿的时候</b>——顾客对新店有新鲜感，愿意拍照、愿意写。这周目标 <b>15—20 条真实评价</b>。</div></div>
+      <div class="li"><span class="num">2</span><div><b>三个触点：</b>桌卡二维码、结账时一句"帮我们写条评价，下次送一份小菜"、离店时的评价卡片。</div></div>
+      <div class="li"><span class="num">3</span><div><b>差评当天回。</b>新店最怕的不是差评，是差评没人管。24 小时内回复 + 能申诉的当天申诉。</div></div>
+    </div>
+
+    <div class="card">
+      <h3>第 3 周 · 小额试推广，看真实转化</h3>
+      <div class="li"><span class="num">1</span><div><b>先看三条线再决定推不推：</b>进店率 ≥ 商圈均值、下单率 ≥ 商圈均值、星级 ≥ 4.2。<b>不达标就继续修，别急着花钱。</b></div></div>
+      <div class="li"><span class="num">2</span><div><b>节奏：</b>30—50 元/天试 3 天 → 看进店率 → 达标加到 80—100 元/天 → 再观察。</div></div>
+      <div class="li"><span class="num">3</span><div><b>不做什么：</b>不做 5 折。新店打 5 折会把手感价格锚死，第二个月涨回去就是断崖。</div></div>
+    </div>
+
+    <div class="card">
+      <h3>第 4 周 · 复盘与固盘</h3>
+      <div class="li"><span class="num">1</span><div><b>看三个数：</b>月销单量、评价数增量、复购率（同一顾客 30 天内二次到店）。</div></div>
+      <div class="li"><span class="num">2</span><div><b>调结构：</b>哪档套餐卖得最好就加配菜、提价 5—10 元；卖不动的下架换新。</div></div>
+      <div class="li"><span class="num">3</span><div><b>定第二个月目标：</b>评价到 50 条、星级 4.4 以上、团购月销过 60 单。</div></div>
+    </div>
+
+    <div class="warn">
+      <b>30 天的三个硬指标（用来判断这一个月有没有白干）：</b>① 评价 ≥ 50 条；② 星级 ≥ 4.4；③ 团购月销 ≥ 60 单。<b>三条做到两条算成功，一条都没做到，说明产品端还有硬伤，先别投钱推广。</b>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>🧾</i>七、我们能交付的 SOP 清单</h2>
+    <div class="card">
+      <h3>第一块 · 上线无忧（前期搭建）</h3>
+      <table>
+        <tr><th>项目</th><th>频次</th></tr>
+        <tr><td>商圈与竞对调研（评分/评价数/人均/距离实算）</td><td>合作后 1 次</td></tr>
+        <tr><td>新店诊断（星级、曝光、转化、菜品结构）</td><td>1 次，之后按月更新</td></tr>
+        <tr><td>品类定位与关键词改造（砂锅火锅 + 四个搜索词）</td><td>1 次</td></tr>
+        <tr><td>视觉方案（首图、菜品图规范、页面装修）</td><td>1 次</td></tr>
+        <tr><td>三档套餐与代金券方案</td><td>1 次，之后每月 1 次</td></tr>
+        <tr><td>后台配置上线、员工培训（点单与好评引导话术）</td><td>各 1 次</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>第二块 · 贴身管家（每日/持续）</h3>
+      <table>
+        <tr><th>项目</th><th>频次</th></tr>
+        <tr><td>评价监控 / 评价回复 / 差评申诉</td><td>每日</td></tr>
+        <tr><td>评价与星级分析（含竞对对比）</td><td>每日</td></tr>
+        <tr><td>营销活动配置与调整</td><td>每月 ≥1 次</td></tr>
+        <tr><td>经营数据复盘</td><td>每周 1 次</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>第三块 · 流量与榜单</h3>
+      <table>
+        <tr><th>项目</th><th>频次</th></tr>
+        <tr><td>曝光/进店/下单三层漏斗分析</td><td>每周 1 次</td></tr>
+        <tr><td>推广预算规划与计划执行</td><td>每周 1 次</td></tr>
+        <tr><td>推广复盘（花了多少 / 带来多少单）</td><td>每周 1 次</td></tr>
+        <tr><td>星级提升方案、收藏打卡策略</td><td>每月 1 次</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>第四块 · 数据交付</h3>
+      <table>
+        <tr><th>交付物</th><th>频次</th></tr>
+        <tr><td>新店诊断报告</td><td>合作后 1 次</td></tr>
+        <tr><td>团购运营周报</td><td>每周 1 次</td></tr>
+        <tr><td>团购运营月报</td><td>每月 1 次</td></tr>
+        <tr><td>评价数据表（含竞对横向对比）</td><td>持续更新</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>🗓️</i>八、服务进程</h2>
+    <div class="card">
+      <div class="tl">
+        <div class="tl-item"><b>第 0 天 · 前期筹备</b>建群、账号交接、菜品与素材盘点</div>
+        <div class="tl-item"><b>第 1—2 天 · 竞对实算</b>商圈砂锅竞对逐一核实，定价格带与场景</div>
+        <div class="tl-item"><b>第 3—5 天 · 方案梳理</b>诊断报告 + 定位 + 三档套餐</div>
+        <div class="tl-item"><b>第 6—7 天 · 方案沟通</b>跟你定取舍（套餐价格、招牌菜、时段）</div>
+        <div class="tl-item"><b>第 8—14 天 · 首次搭建</b>页面装修、套餐上线、首图拍摄、员工培训</div>
+        <div class="tl-item"><b>第 15—21 天 · 评价启动 + 试推广</b>桌卡落地、评价引导、30—50 元/天测试</div>
+        <div class="tl-item"><b>第 22—30 天 · 首个复盘</b>三指标对照、套餐调价、下月打法</div>
+        <div class="tl-item"><b>每周 · 周度复盘</b>流量漏斗 + 评价进度 + 活动效果</div>
+        <div class="tl-item"><b>每月 · 月度复盘</b>月报沟通 + 下月打法调整</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>💰</i>九、报价与回本测算</h2>
+    <div class="card">
+      <table>
+        <tr><th>方案</th><th>周期</th><th>价格</th><th>折月</th><th>折日</th></tr>
+        <tr><td>标准价</td><td>三个月一期</td><td>12000 元</td><td>4000 元</td><td>133 元</td></tr>
+        <tr class="self"><td><b>本次特惠</b></td><td>三个月一期</td><td class="hot"><b>8000 元</b></td><td>2667 元</td><td>89 元</td></tr>
+      </table>
+      <p style="margin-top:8px;">按综合毛利 55% 测算：日成本 89 元 ÷ 55% ≈ <b>每天多做 162 元流水</b>即可回本。<b>按人均 60 元算，相当于每天多来不到 3 位客人</b>——也就是每两天多开一桌。</p>
+      <p>新店的增量比老店好做：你现在是 0，任何一个正确的动作都是净增量。评价从 0 做到 50 条、团购月销做到 60 单，这个量级在三个月的周期里是可实现的。</p>
+    </div>
+    <div class="warn">
+      <b>不含项说清楚：</b>报价不含菜品实拍（需门店配合或另计）、不含推广费（直接充进平台账户，不进我方）、不含物料印刷。<b>三个月一期，不押年框</b>，做完这一期你可以决定续不续。
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><i>🤝</i>十、需要门店配合的四件事</h2>
+    <div class="card">
+      <div class="li"><span class="num">1</span><div><b>出品稳定，尤其前两周。</b>新店的评价是"一次性资产"——前 20 条评价决定你后面半年的分数水位。第一周宁可少接客，也不能出品翻车。</div></div>
+      <div class="li"><span class="num">2</span><div><b>物料落地。</b>桌卡、评价引导话术要真正摆上桌、说出口。这是新店评价基数唯一的来源。</div></div>
+      <div class="li"><span class="num">3</span><div><b>数据开放。</b>上 SaaS 收银，把桌数、翻台、菜品销量打开。新店最需要的是"哪天该多备货、哪道菜该砍"的判断依据。</div></div>
+      <div class="li"><span class="num">4</span><div><b>价格纪律。</b>30 天内不要跟着隔壁 20 元的砂锅菜降价。你一旦进了那个池子，就再也回不到正餐价位。</div></div>
+    </div>
+    <div class="card lead">
+      <h3>一句话总结</h3>
+      <p>生态城 15 家在营砂锅，评分中位 3.7，人均 19—32 元——<strong>这个品类在本地被做成了快餐</strong>。你是新店，没有历史包袱，正好可以从第一天就站在"砂锅火锅"这个正餐位置上。<strong>30 天内把三档套餐、四个搜索词、50 条评价做出来，你就不是第 16 家砂锅店，而是生态城第一家砂锅火锅。</strong></p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p><b>数据来源</b>：海鸥 CRM（门店信息、商圈门店数、竞对星级/评价数/人均、经纬度实算距离）<br>
+    数据时间：2026-11-24｜竞对为生态城商圈内经关键词检索到的砂锅及火锅类门店</p>
+    <p style="margin-top:10px;">本方案为运营打法建议，星级、榜单、营业额均不作承诺</p>
+  </div>
+
+</div>
+</body>
+</html>
